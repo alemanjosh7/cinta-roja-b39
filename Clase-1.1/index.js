@@ -1,7 +1,7 @@
 // 1) Variable
 //Vanilla JS
 var numero = 10;
-//test1
+
 //Tipos de datos
 const string = "Este es un texto";
 const boolean = true;
