@@ -79,7 +79,6 @@ const esParLaSumaDeDosNumeros = (numero1, numero2) => {
 // console.log(res3);
 // console.log(res2);
 
-
 //2
 // const convertidorPalabras = (palabra, callback) => {
 //     callback(palabra);
@@ -94,7 +93,7 @@ const esParLaSumaDeDosNumeros = (numero1, numero2) => {
 // }
 
 // convertidorPalabras("Hola", contentCallBack);
-
+//test
 //3
 
 const mayorADosHoras = (arr, callback) => {
