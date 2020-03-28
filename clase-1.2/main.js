@@ -17,6 +17,7 @@ const json = {
     Programacion Orientada a Objetos:
     Clases
 */
+//
 // Molde de objetos
 class Mascota {
     //Constructor - Es quien recibe y asigna atributos
