@@ -17,7 +17,7 @@ const SWAPI_URL = "https://pokeapi.co/api/v2/pokemon/1"; //endpoint
 //     const json = JSON.parse(body);
 //     console.log(json);
 // })
-const POKEAPI_URL = "https://pokeapi.co/api/v2/pokemon/1";
+//const POKEAPI_URL = "https://pokeapi.co/api/v2/pokemon/1";
 const OPENLIBRARY_URL = "http://openlibrary.org/search.json?q=i+robot";
 const AUTHOR_URL = "http://openlibrary.org/search.json?author=asimov";
 
@@ -128,7 +128,27 @@ request.get(NASA_URL, (err, res, body) => {
     } 
   });
 
-const POKEMON_URL = 'https://pokeapi.co/'
+  const POKEAPI_URL = 'https://pokeapi.co/api/v2/pokemon?limit=151';
+
+   request.get(POKEAPI_URL, (err, res, body) => {
+      const respuesta = JSON.parse(body).results;
+      // Prueba el código con i<=2 
+      for(let i=0; i<=30; i++){
+          request.get(respuesta[i].url, (err, res, body) => {
+              
+              const respuesta = JSON.parse(body);
+              
+              let pokemon = {
+                  nombre: respuesta.name,
+                  movimientos: respuesta.moves,
+                  tipos: respuesta.types,
+                  altura: respuesta.height,
+                  peso: respuesta.weight
+              }
+              console.log(pokemon);
+          });
+      }
+  }); 
 
 
 
