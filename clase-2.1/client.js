@@ -92,24 +92,24 @@ const NAME_URL = "https://swapi.co/api/people/13/"
 //                 console.log(doc.title_suggest);
 //             }
 //         });
-request.get(NAME_URL, (err, res, body) => {
-    if(res.statusCode === 200){
-        const json = JSON.parse(body);
-            console.log(`The author is ${json.name}`);
-            json.films.forEach((film) =>{
-                request.get(film, (err, res, body) => {
-                    const jsonFilmes = JSON.parse(body);
-                    console.log(jsonFilmes.title);
-                })
-            })
-    } else{
-        console.log(res.statusCode);
-    }
-});
+// request.get(NAME_URL, (err, res, body) => {
+//     if(res.statusCode === 200){
+//         const json = JSON.parse(body);
+//             console.log(`The author is ${json.name}`);
+//             json.films.forEach((film) =>{
+//                 request.get(film, (err, res, body) => {
+//                     const jsonFilmes = JSON.parse(body);
+//                     console.log(jsonFilmes.title);
+//                 })
+//             })
+//     } else{
+//         console.log(res.statusCode);
+//     }
+// });
 //https://api.nasa.gov/neo/rest/v1/feed?start_date=START_DATE&end_date=END_DATE&api_key=tPwgiDUJ0CbmxQraXVvuMjrgZN3WFRw1x3CJZhAr
     //6
-const START_DATE = '2020-03-23';
-const END_DATE = '2020-03-30';
+const START_DATE = '2020-03-31';
+const END_DATE = '2020-03-24';
 const API_KEY = 'tPwgiDUJ0CbmxQraXVvuMjrgZN3WFRw1x3CJZhAr'
 const NASA_URL = `https://api.nasa.gov/neo/rest/v1/feed?start_date=${START_DATE}&end_date=${END_DATE}&api_key=tPwgiDUJ0CbmxQraXVvuMjrgZN3WFRw1x3CJZhAr`;
 request.get(NASA_URL, (err, res, body) => {
@@ -120,7 +120,9 @@ request.get(NASA_URL, (err, res, body) => {
       dates.forEach((date) => {
           const meteorite = Object.values(date);
           meteorite.forEach((name) => {
-              console.log(name.name);
+              if(name.is_potentially_hazardous_asteroid == true){
+                console.log(name.name);
+              }
           })
       })
     } 
