@@ -59,55 +59,55 @@ const esParLaSumaDeDosNumeros = (numero1, numero2) => {
 // highOrder(num, contentCallBack);
 
 //1
-// const sumaDeDosNumeros = (num1, num2, callback) => {
-//     return callback(num1, num2);
-// }
-// const resta = (num1, num2) => num1 - num2;
-// const suma = (num1, num2) => num1 + num2;
-// const multi = (num1, num2) => num1 * num2;
+const sumaDeDosNumeros = (num1, num2, operacion) => {
+    return operacion(num1, num2);
+}
+const resta = (num1, num2) => num1 - num2;
+const suma = (num1, num2) => num1 + num2;
+const multi = (num1, num2) => num1 * num2;
 
-// const contentCallBack = (num1, num2) => {
-//     console.log(resta(num1, num2));
-//     console.log(suma(num1, num2));
-//     console.log(multi(num1, num2));
-// }
+const contentCallBack = (num1, num2) => {
+    console.log(resta(num1, num2));
+    console.log(suma(num1, num2));
+    console.log(multi(num1, num2));
+}
 
-// const res1 = sumaDeDosNumeros(2,2, resta);
-// const res2 = sumaDeDosNumeros(2,2, suma);
-// const res3 = sumaDeDosNumeros(2,2, multi);
-// console.log(res1);
-// console.log(res3);
-// console.log(res2);
+const res1 = sumaDeDosNumeros(2,2, resta);
+const res2 = sumaDeDosNumeros(2,2, suma);
+const res3 = sumaDeDosNumeros(2,2, multi);
+console.log(res1);
+console.log(res2);
+console.log(res3);
 
 //2
-// const convertidorPalabras = (palabra, callback) => {
-//     callback(palabra);
-// }
+const convertidorPalabras = (palabra, convertidor) => {
+    convertidor(palabra);
+}
 
-// const minus = (palabra) => palabra.toLowerCase();
-// const upper = (palabra) => palabra.toUpperCase();
+const minus = (palabra) => palabra.toLowerCase();
+const upper = (palabra) => palabra.toUpperCase();
 
-// const contentCallBack = (palabra) => {
-//     console.log(minus(palabra));
-//     console.log(upper(palabra));
-// }
+const convertidor = (palabra) => {
+    console.log(minus(palabra));
+    console.log(upper(palabra));
+}
 
-// convertidorPalabras("Hola", contentCallBack);
-//test
+convertidorPalabras("Hola", convertidor);
 //3
 
-const mayorADosHoras = (arr, callback) => {
-    callback(arr);
+const mayorADosHoras = (horas, callback) => {
+    callback(horas);
 }
-const res = (arr) => {
+const res = (horas) => {
     for(let i = 0; i < 4; i++){
-        if(arr[i] > 120){
-            console.log(arr[i]);
+        horas[i] /= 60;
+        if(horas[i] > 2){
+            console.log("Es mayor que dos horas");
         }
     }
 }
 
-mayorADosHoras([150, 130, 10, 1], res);
+mayorADosHoras([150, 130, 10, 10], res);
 
 
 

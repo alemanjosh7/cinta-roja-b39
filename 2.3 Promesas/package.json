@@ -1,13 +1,14 @@
 {
-  "name": "clase-2.2",
+  "name": "clase-2.3",
   "version": "1.0.0",
   "description": "",
   "main": "client.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Josue Aleman",
-  "license": "MIT",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "request": "^2.88.2"
   }

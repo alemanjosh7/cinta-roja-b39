@@ -83,9 +83,8 @@ const updateAuthor = (id, name, last_name, nacionalidad, biography, gender, age)
 const deleteAuthor = (id) => {
     const URL_GET = `${URL_BASE}/api/v1/authors/${id}/`
     request.delete(URL_GET, (err, res, body) => {
-        if(res.statusCode === 200){
-            const json = JSON.parse(body);
-            console.log(json);
+        if(res.statusCode === 204){
+            console.log("Eliminado correctamente");
         } else{
             console.log(res.statusCode);
         }
@@ -96,5 +95,5 @@ const deleteAuthor = (id) => {
 // createAuthor("Gabriel", "Garcia", "MX", "Escritor de realismo magico", "M", 90);
 // updateAuthor(4215,"Josue", "Aleman", "MX", "Me gusta programar y ver series de netflix", "M", 16);
 // getAuthors(4215);
-// deleteAuthor(4215);
+ deleteAuthor(4553);
 
