@@ -1,4 +1,4 @@
-const mongoose = requiere('mongoose');
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const movieSchema = new Schema({
@@ -7,10 +7,10 @@ const movieSchema = new Schema({
         required: true,
     },
     genre: String,
-    actors: [{
-        type: String,
+    actors: {
+        type: [String], 
         required: true,
-    }], 
+    },
     description:{ 
         type: String,
         default: "Descripcion general..."
