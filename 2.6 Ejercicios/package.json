@@ -1,0 +1,16 @@
+{
+  "name": "2.6-ejercicios",
+  "version": "1.0.0",
+  "description": "Ejercicios de Backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Josue Aleman",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.9.7",
+    "request": "^2.88.2"
+  }
+}
